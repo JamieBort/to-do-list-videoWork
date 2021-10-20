@@ -2,33 +2,46 @@ import React from 'react';
 
 const todoList = [
   {
-    id: 1,
-    title: "Complete assignment"
+    ObjectID: 1,
+    type: "Person",
+    title: "Señor"
   },
   {
-    id: 2,
-    title: "Random title"
+    ObjectID: 2,
+    type: "vehicle",
+    title: "automobile"
   },
   {
-    id: 3,
-    title: "Parts list"},
+    ObjectID: 3,
+    type: "home",
+    title: "house"
+  },
 ]
 
+// *** The function can be outside of App() ***
+// const todoListItems = todoList.map((item) =>
+//     <li key={item.ObjectID}>{item.title}</li>
+//   );
+
 function App() {
-  const todoListItems = todoList.map((item) =>
-  <li key={item.id}>{item.title}</li>
-);
+  // *** The function can be inside of App() ***
+  // const todoListItems = todoList.map((item) =>
+  //   <li key={item.ObjectID}>{item.title}</li>
+  // );
 
   return (
     <div>
       <h1>To-Do List</h1>
       <ul>
-      {todoListItems}
-      {/* {listItems} */}
+        {/* *** This is used for the todoListItems map function *** */}
+        {/* {todoListItems} */}
+
+        {/* *** this is used when the todoListItems map function isn't defined ahead of time. *** */}
+        {todoList.map((item) => <li key={item.ObjectID}>{item.title}</li>)}
       </ul>
     </div>
 
-    );
+  );
 }
 
 export default App;
