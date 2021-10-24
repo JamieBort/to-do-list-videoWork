@@ -1,44 +1,21 @@
 import React from 'react';
+import Item from './Item';
 
-const todoList = [
-    {
-        ObjectID: 1,
-        author: "James",
-        type: "hard cover",
-        isbn: 3323420,
-        title: "Señor"
-    },
-    {
-        ObjectID: 2,
-        author: "Jackson",
-        type: "soft cover",
-        isbn: 3483420,
-        title: "automobile"
-    },
-    {
-        ObjectID: 3,
-        author: "Dwight",
-        type: "hard cover",
-        isbn: 3322345230,
-        title: "house"
-    },
-]
-
-const todoListItems = todoList.map((item) =>
-    <li key={item.ObjectID}>
-        {item.type}
-        <ul>
-            <li>{item.isbn}</li>
-            <li>{item.title}</li>
-        </ul>
-    </li>
-);
-
-function TodoList() {
+function TodoList(props) {
+    // console.log(typeof(props.list))
+    const todoList = props.list.map((list) =>
+        <li key={list.ObjectID}>
+            {list.title}
+            <ul>
+                <Item list={list} />
+            </ul>
+        </li>
+    );
     return (
         <div>
             <ul>
-                {todoListItems}
+                {todoList}
+                {/* {props.list} */}
             </ul>
         </div>
     );
