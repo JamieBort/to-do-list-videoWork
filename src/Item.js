@@ -2,7 +2,7 @@ import React from 'react';
 
 function Item(props) {
     const method_2_array = [];
-    console.log("props.list: ", props.list);
+    // console.log("props.list: ", props.list);
     // console.log("Object.keys(props.list): ", Object.keys(props.list));
     // console.log("Object.keys(props.list)[0]: ", Object.keys(props.list)[0]);
 
